@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block div3 %}
+Please wait for the provisioning script to run.<br />
+Logs are being sent to Graylog at https://10.255.144.8<br /><br />
+<br />
+<br />
+{% autoescape false %}
+{{ output }}
+{% endautoescape %}
+{% endblock %}

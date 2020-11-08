@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block div3 %}
+<div style='text-align: center;'>
+<form method=post enctype=multipart/form-data action='/build_run/'>
+  <p>
+     <select name=csv_file>
+      {% for csv_file in csv_files %}
+          <option value="{{ csv_file }}">{{ csv_file }}</option>
+      {% endfor %}
+    </select>
+     <select name=template_file>
+      {% for template_file in template_files %}
+          <option value="{{ template_file }}">{{ template_file }}</option>
+      {% endfor %}
+    </select>
+     <input type=submit value=Submit />
+  </p>
+</form>
+</div>
+{% endblock %}

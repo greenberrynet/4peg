@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block div3 %}
+<div style="text-align: center">
+<h4>Upload CSV Provisioning File</h4>
+<form method=post enctype=multipart/form-data>
+  <p><input type=file name=file>&nbsp;&nbsp;
+     <input type=submit value=Upload />
+  </p>
+</form>
+</div>
+{% endblock %}

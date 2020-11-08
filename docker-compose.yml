@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    restart: unless-stopped
+    build: './web/'
+    ports:
+      - '8000:8000'
+    environment:
+      - FLASK_APP=/home/flask/app/web/main.py
+      - FLASK_DEBUG=1
+    volumes:
+      - ./logs/:/var/log/
+      - ./configs/:/home/flask/app/web/configs
+      - ./jinja2/:/home/flask/app/web/jinja2
+      - ./csv/:/home/flask/app/web/csv
+      - ./:/root/
+    command: flask run --host=0.0.0.0 --port 8000

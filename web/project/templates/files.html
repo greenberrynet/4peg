@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block div3 %}
+<div style='text-align: center;'>
+<form method=post enctype=multipart/form-data action='/upload'>
+  <p><input type=file name=file>&nbsp;&nbsp;
+     <input type=hidden name=file_type value={{ file_type }}>&nbsp;&nbsp;
+     <input type=submit value=Upload />
+  </p>
+</form>
+</div>
+<table id="files">
+    <tr>
+        <th id='col_filename'>Filename</th>
+        <th id='col_download' >Download</th>
+        <th id='col_delete' >Delete</th>
+    </tr>
+    {% for file in files %}
+    <tr>
+	<td id='col_filename'><a href="/open_file/{{ file_type }}/{{ file }}">{{ file }}</a></td>
+	<td id='col_download'><a href="/download/{{ file_type }}/{{ file }}">Download</a></td>
+        <td id='col_delete'><a href="/delete_file/{{ file_type }}/{{ file }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
